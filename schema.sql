@@ -26,4 +26,25 @@ CREATE TABLE employee (
   PRIMARY KEY (id)
 );
 
+INSERT INTO department (name)
+VALUES ("Human Resource");
+
+INSERT INTO department (name)
+VALUES ("Sales");
+
+INSERT INTO department (name)
+VALUES ("Accounting");
+
+INSERT INTO role (title, salary, department_id)
+VALUES ("Manager", "$150,000", "18");
+
+INSERT INTO role (title, salary, department_id)
+VALUES ("Employee", "90,000", "25")
+
+INSERT INTO role (title, salary, department_id)
+VALUES ("Intern", "30,000", "5")
+
+INSERT INTO role (title, salary, department_id)
+VALUES ("Manager", "$150,000", "18");
+
 SELECT * FROM role;
