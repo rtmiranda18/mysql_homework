@@ -92,7 +92,7 @@ connection.connect((err) => {
                 `;
     connection.query(sql, (err, res) => {
         if (err) throw err;
-        console.log(res);
+        // console.log(res);
         res.length ? console.table(res) : console.table([{results: 'No Data Found!'}]);
         initialQuestions();
     });
@@ -191,7 +191,7 @@ connection.connect((err) => {
   }
   
   const viewAllRolesWithSalaries = () => {
-    const sql = `SELECT id, title, salary FROM role`;
+    const sql = `SELECT role.id, title, salary, name as department FROM role INNER JOIN department on role.department_id=department.id`;
     connection.query(sql, (err, res) => {
         if (err) throw err;
         res.length ? console.table(res) : console.table([{results: 'No Data Found!'}]);
